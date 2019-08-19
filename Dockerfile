@@ -10,3 +10,5 @@ RUN npm install -g semantic-release@15.13.18 \
     @semantic-release/git@7.0.16 \
     # Using my fork since they haven't merged my PR for better handling of assets in gitlab
     rdaniels6813/gitlab#master
+RUN apk add --update make \
+  && rm -rf /var/cache/apk/*
