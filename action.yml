@@ -1,5 +1,8 @@
 name: 'Alpine Semantic Releaser'
 description: 'Run semantic-release on a repo'
+branding:
+  color: purple
+  icon: box
 inputs:
   github-token:
     description: 'Github token for pushing releases'
