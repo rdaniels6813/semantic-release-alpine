@@ -1,7 +1,14 @@
 name: 'Semantic Release'
 description: 'Run semantic-release on a repo'
+inputs:
+  github-token:
+    description: 'Github token for pushing releases'
+    required: true
+    default: ${{secrets.GITHUB_TOKEN}}
 runs:
   using: 'docker'
   image: rdaniels6813/semantic-release-alpine
   args:
     - semantic-release
+  env:
+    GITHUB_TOKEN: ${{ inputs.github-token }}

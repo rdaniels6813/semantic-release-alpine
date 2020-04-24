@@ -12,3 +12,5 @@ jobs:
       - uses: actions/checkout@v2
       - name: semantic-release
         uses: ./
+        with:
+          github-token: ${{secrets.GITHUB_TOKEN}}
