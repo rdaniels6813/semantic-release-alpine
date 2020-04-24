@@ -10,7 +10,7 @@ inputs:
     default: ''
 runs:
   using: 'docker'
-  image: rdaniels6813/semantic-release-alpine
+  image: docker://rdaniels6813/semantic-release-alpine
   args:
     - semantic-release
   env:
