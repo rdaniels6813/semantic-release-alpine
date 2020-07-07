@@ -8,10 +8,15 @@ inputs:
     description: 'Github token for pushing releases'
     required: true
     default: ''
+  plugins:
+    description: 'Space separated semantic-release plugins to install'
+    required: false
+    default: ''
 runs:
   using: 'docker'
   image: docker://rdaniels6813/semantic-release-alpine
-  args:
-    - semantic-release
+  pre-entrypoint: 'setup.sh'
+  entrypoint: 'main.sh'
   env:
     GITHUB_TOKEN: ${{ inputs.github-token }}
+    PLUGINS: ${{ inputs.plugins }}
