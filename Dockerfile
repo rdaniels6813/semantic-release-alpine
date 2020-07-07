@@ -12,4 +12,4 @@ RUN npm install -g semantic-release@17.1.1 \
 RUN apk add --update make \
   && rm -rf /var/cache/apk/*
 COPY *.sh /
-RUN chmod +x /main.sh /setup.sh
+RUN chmod +x /main.sh
