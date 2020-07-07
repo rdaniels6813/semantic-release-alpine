@@ -15,8 +15,7 @@ inputs:
 runs:
   using: 'docker'
   image: docker://rdaniels6813/semantic-release-alpine
-  pre-entrypoint: 'setup.sh'
-  entrypoint: 'main.sh'
+  entrypoint: '/main.sh'
   env:
     GITHUB_TOKEN: ${{ inputs.github-token }}
     PLUGINS: ${{ inputs.plugins }}
