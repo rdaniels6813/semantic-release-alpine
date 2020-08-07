@@ -14,4 +14,7 @@ fi
 command_response="`semantic-release`"
 echo "$command_response"
 version=`echo "$command_response" | grep "The next release version is" | rev | cut -d' ' -f1 | rev`
-[ ! -z "$version" ] && echo "::set-output name=released-version::v$version"
+if [ ! -z "$version" ]
+then
+  echo "::set-output name=released-version::v$version"
+fi
