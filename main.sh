@@ -11,7 +11,7 @@ fi
 if [ "$PLUGINS" != "" ]; then
   npm rebuild -g $PLUGINS
 fi
-tty=$(tty)
-command_response=`semantic-release | tee $tty`
+command_response=`semantic-release`
+echo $command_response
 version=`echo $command_response | grep "The next release version is" | rev | cut -d' ' -f1 | rev`
 [ ! -z "$version" ] && echo "::set-output name=released-version::v$version"
