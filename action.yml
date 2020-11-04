@@ -19,7 +19,7 @@ outputs:
     description: 'The version number (without a leading v) that was released (empty if no release occured)'
 runs:
   using: 'docker'
-  image: docker://rdaniels6813/semantic-release-alpine
+  image: ./Dockerfile
   entrypoint: '/main.sh'
   env:
     GITHUB_TOKEN: ${{ inputs.github-token }}
