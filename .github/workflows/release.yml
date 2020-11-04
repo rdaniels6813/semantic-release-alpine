@@ -30,7 +30,7 @@ jobs:
         if: steps.semantic-release.outputs.released-version-number != ''
         uses: elgohr/Publish-Docker-Github-Action@2.22
         with:
-          name: rdaniels6813/semantic-release-alpine
+          name: docker.pkg.github.com/rdaniels6813/semantic-release-alpine/default
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
           registry: docker.pkg.github.com
