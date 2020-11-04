@@ -16,4 +16,5 @@ version=`cat semantic-release-output.txt | grep "The next release version is" | 
 if [ ! -z "$version" ]
 then
   echo "::set-output name=released-version::v$version"
+  echo "::set-output name=released-version-number::$version"
 fi
