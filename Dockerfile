@@ -1,14 +1,14 @@
-FROM node:lts-alpine
+FROM node:16-alpine3.15
 RUN apk update && apk add git
-RUN npm install -g semantic-release@17.2.2 \
-  @semantic-release/commit-analyzer@8.0.1 \
-  @semantic-release/release-notes-generator@9.0.1 \
-  @semantic-release/github@7.1.1 \
-  @semantic-release/npm@7.0.6 \
-  @semantic-release/exec@5.0.0 \
-  @semantic-release/changelog@5.0.1 \
-  @semantic-release/git@9.0.0 \
-  @semantic-release/gitlab@6.0.5
+RUN npm install -g semantic-release@19 \
+  @semantic-release/commit-analyzer@9 \
+  @semantic-release/release-notes-generator@10 \
+  @semantic-release/github@8 \
+  @semantic-release/npm@9 \
+  @semantic-release/exec@6 \
+  @semantic-release/changelog@6 \
+  @semantic-release/git@10 \
+  @semantic-release/gitlab@7
 RUN apk add --update make \
   && rm -rf /var/cache/apk/*
 COPY *.sh /
